@@ -122,3 +122,38 @@ CHOICE /N /C:YN /M "[96m   [0m Run Advanced SwitchIP? [[96mY[0m/[96mN[0m]:
 IF ERRORLEVEL ==2 echo. & GOTO Endxit
 IF ERRORLEVEL ==1 GOTO AdvOpt
 goto OptMenu2
+
+
+REM =====================================
+REM	== Advanced Option ===================
+REM =====================================
+:AdvOpt
+cls
+echo.
+echo. >> %logfile%
+
+:: Step 4: Reset Winsock (Fixes Socket Errors)
+echo Step 4: Reset Winsock (Fixes Socket Errors) >> %logfile%
+netsh winsock reset
+if %errorlevel% NEQ 0 (
+    echo ❌ ERROR: Failed to reset Winsock!
+    echo ℹ️  Possible Fix: Run this script as Administrator.
+    goto end
+) else (
+    echo [92m✅[0m Winsock settings reset! This fixes network corruption issues.
+)
+echo.
+echo. >> %logfile%
+
+:: Step 5: Reset TCP/IP Stack (Fixes Internet Issues)
+echo Step 5: Reset TCP/IP Stack (Fixes Internet Issues) >> %logfile%
+netsh int ip reset
+if %errorlevel% NEQ 0 (
+    echo ❌ ERROR: Failed to reset TCP/IP stack!
+    echo ℹ️  Possible Fix: Restart your computer and try again.
+    goto end
+) else (
+    echo [92m✅[0m TCP/IP stack reset! This fixes slow or no internet connection.
+)
+echo.
+echo. >> %logfile%
