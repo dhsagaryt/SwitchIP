@@ -3,23 +3,28 @@ SwitchIP is a simple yet powerful batch script that helps diagnose and fix commo
 
 ## 🛠 Features
 
-Flushes DNS cache to resolve website loading issues
+![Screenshot.](Screenshot_002222.png)
 
-Releases and renews IP addresses to fix connectivity problems
+- Flushes DNS cache to resolve website loading issues
 
-Resets Winsock and TCP/IP stack to repair corrupted network settings
+- Releases and renews IP addresses to fix connectivity problems
 
-Restarts the network adapter to apply changes
+- Resets Winsock and TCP/IP stack to repair corrupted network settings
 
-Provides real-time progress updates and error handling
+- Restarts the network adapter to apply changes
+
+- Provides real-time progress updates and error handling
 
 ## 📥 Installation
 
-Download the network_troubleshooter.bat file from this repository.
+Download the SwitchIP.bat file from this repository.
 
 Right-click the file and select Run as Administrator.
 
 ## 🔧 Usage
+
+![Screenshot.](Screenshot_003330.png)
+![Screenshot.](Screenshot_003352.png)
 
 Ensure you have an active internet connection.
 
