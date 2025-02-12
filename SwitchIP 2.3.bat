@@ -157,3 +157,38 @@ if %errorlevel% NEQ 0 (
 )
 echo.
 echo. >> %logfile%
+
+:: Play Sound Alert
+powershell -c (New-Object Media.SoundPlayer "C:\Windows\Media\notify.wav").PlaySync()
+echo Detail Log File Location At: %logfile%
+echo.
+echo. >> %logfile%
+
+goto Endxit
+
+:: Error Handling Function
+:end
+echo.
+echo  ╔═════════════════════════════════════════════════════════════════════╗
+echo  ║⚠️  TROUBLESHOOTING TIPS:                                            ║
+echo  ║🔹 Ensure you are connected to a network before running this script. ║
+echo  ║🔹 This Script Better Work, IF You are Non-Static IP User.           ║
+echo  ║🔹 Run this script as Administrator for better results.              ║
+echo  ╚═════════════════════════════════════════════════════════════════════╝
+echo.
+
+:: Play Sound Alert
+powershell -c (New-Object Media.SoundPlayer "C:\Windows\Media\notify.wav").PlaySync()
+echo Detail Log File Location At: [93m%logfile%[0m
+echo.
+echo. >> %logfile%
+goto Endxit
+
+
+:Endxit
+pause
+echo Exit SwitchIP At Time [%date%] [%time%] >> %logfile%
+start https://www.instagram.com/dhsagaryt/
+start https://sagarmondaldev.blogspot.com/
+cls
+exit
